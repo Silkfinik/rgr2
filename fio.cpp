@@ -10,7 +10,7 @@ struct Student {
     int group;
 };
 
-void read(std::vector<Student> vec){
+void read(std::vector<Student>& vec){
     std::string str;
     std::ifstream in;
     in.open("C:\\Users\\silkfinik\\CLionProjects\\rgr2\\Students.txt");
@@ -50,6 +50,16 @@ bool compareByName(const Student &a, const Student &b) {
     return a.name > b.name;
 }
 
+bool compareByCourseGroupName(const Student &a, const Student &b) {
+    if (a.course != b.course) {
+        return a.course < b.course;
+    } else if (a.group != b.group) {
+        return a.group < b.group;
+    } else {
+        return a.name > b.name;
+    }
+}
+
 void print_first(std::vector<Student> vec){
     std::sort(vec.begin(), vec.end(), compareByName);
     std::ofstream out;
@@ -58,7 +68,21 @@ void print_first(std::vector<Student> vec){
         for(int i = 0; i < vec.size(); ++i){
             std::string temp_str;
             temp_str += vec[i].name + ";" + std::to_string(vec[i].course) + ";" + std::to_string(vec[i].group) + ";";
-            out << temp_str;
+            out << temp_str << std::endl;
+        }
+    }
+    out.close();
+}
+
+void print_second(std::vector<Student> vec){
+    std::sort(vec.begin(), vec.end(), compareByCourseGroupName);
+    std::ofstream out;
+    out.open("C:\\Users\\silkfinik\\CLionProjects\\rgr2\\Groups.txt");
+    if(out.is_open()){
+        for(int i = 0; i < vec.size(); ++i){
+            std::string temp_str;
+            temp_str += vec[i].name + ";" + std::to_string(vec[i].course) + ";" + std::to_string(vec[i].group) + ";";
+            out << temp_str << std::endl;
         }
     }
     out.close();
@@ -68,4 +92,5 @@ int main(){
     std::vector<Student> list;
     read(list);
     print_first(list);
+    print_second(list);
 }
