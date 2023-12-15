@@ -1,0 +1,4 @@
+C:/Users/silkfinik/CLionProjects/rgr2/cmake-build-debug/CMakeFiles/first_task.dir
+C:/Users/silkfinik/CLionProjects/rgr2/cmake-build-debug/CMakeFiles/second_task.dir
+C:/Users/silkfinik/CLionProjects/rgr2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/silkfinik/CLionProjects/rgr2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
