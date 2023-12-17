@@ -58,14 +58,14 @@ void read(std::vector<Train>& vec) {
     in.open("C:\\Users\\silkfinik\\CLionProjects\\rgr2\\Input.txt");
     if (in.is_open()){
         while (std::getline(in, str)){
-            temp.set_number(std::stoi(str.substr(0, str.find(" "))));
-            str = str.substr(str.find(" ") + 1);
-            temp.set_name(str.substr(0, str.find(" ")));
-            str = str.substr(str.find(" ") + 1);
-            temp.set_type(str.substr(0, str.find(" ")));
-            str = str.substr(str.find(" ") + 1);
-            temp.set_dep_time(str.substr(0, str.find(" ")));
-            temp.set_travel_time(std::stoi(str.substr(str.rfind(" "))));
+            temp.set_number(std::stoi(str.substr(0, str.find(' '))));
+            str = str.substr(str.find(' ') + 1);
+            temp.set_name(str.substr(0, str.find(' ')));
+            str = str.substr(str.find(' ') + 1);
+            temp.set_type(str.substr(0, str.find(' ')));
+            str = str.substr(str.find(' ') + 1);
+            temp.set_dep_time(str.substr(0, str.find(' ')));
+            temp.set_travel_time(std::stoi(str.substr(str.rfind(' '))));
             vec.push_back(temp);
         }
     }
