@@ -106,6 +106,39 @@ build second_task.exe: CXX_EXECUTABLE_LINKER__second_task_Debug CMakeFiles/secon
   TARGET_IMPLIB = libsecond_task.dll.a
   TARGET_PDB = second_task.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target third_task
+
+
+#############################################
+# Order-only phony target for third_task
+
+build cmake_object_order_depends_target_third_task: phony || CMakeFiles/third_task.dir
+
+build CMakeFiles/third_task.dir/train.cpp.obj: CXX_COMPILER__third_task_unscanned_Debug C$:/Users/silkfinik/CLionProjects/rgr2/train.cpp || cmake_object_order_depends_target_third_task
+  DEP_FILE = CMakeFiles\third_task.dir\train.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\third_task.dir
+  OBJECT_FILE_DIR = CMakeFiles\third_task.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target third_task
+
+
+#############################################
+# Link the executable third_task.exe
+
+build third_task.exe: CXX_EXECUTABLE_LINKER__third_task_Debug CMakeFiles/third_task.dir/train.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\third_task.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = third_task.exe
+  TARGET_IMPLIB = libthird_task.dll.a
+  TARGET_PDB = third_task.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -136,6 +169,8 @@ build first_task: phony first_task.exe
 
 build second_task: phony second_task.exe
 
+build third_task: phony third_task.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -144,7 +179,7 @@ build second_task: phony second_task.exe
 #############################################
 # Folder: C:/Users/silkfinik/CLionProjects/rgr2/cmake-build-debug
 
-build all: phony first_task.exe second_task.exe
+build all: phony first_task.exe second_task.exe third_task.exe
 
 # =============================================================================
 # Built-in targets
